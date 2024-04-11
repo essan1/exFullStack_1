@@ -1,17 +1,5 @@
 import db from "../config/db.js"
 
-//agregar datos
-const agregarRutinas = async() => {
-    try{   
-        const consultaRutinas = {
-            text: '',
-            values: '',
-        }
-    }catch(err){
-        console.log(err.message)
-    }
-}
-
 //ver rutinas
 const verRutinas = async () => {
     try{
@@ -23,6 +11,22 @@ const verRutinas = async () => {
             return result.rows
     }catch(err){
         console.log(err.message);
+    }
+}
+
+//agregar datos
+const agregarRutinas = async(datos) => {
+    try{   
+        const consultaRutinas = {
+            text: 'insert into ejercicios (nombre, series, repeticiones, descanso) values ($1, $2, $3, $4) returning *',
+            values: datos,
+        }
+
+        const result = await db.query(consultaRutinas);
+        console.log(result.rows);
+        return result.rows;
+    }catch(err){
+        console.log(err.message)
     }
 }
 

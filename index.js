@@ -12,6 +12,8 @@ const __dirname = import.meta.dirname
 //carpetos publicas middleware
 app.use(express.static(path.join(__dirname, 'assets')));
 
+//middleware para recibir json
+app.use(express.json());
 
 //middleware para routes
 app.use(router);

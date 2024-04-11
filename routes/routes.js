@@ -13,11 +13,26 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/index.html'))
 })
 
-
 //creamos ruta para las consultas
+//ver rutinas
 router.get('/rutinas',async (req, res) => {
     const mostrarRutinas = await verRutinas();
     res.json(mostrarRutinas);
+})
+
+//agregar rutina
+router.post("/agregarRutina", async (req, res) => {
+  const datos = Object.values(req.body);
+   console.log(datos);
+
+   res.send('dato agregado')
+
+});
+
+//creamos nuestra ruta generica, simeprea al final
+router.get('*', (req, res) => {
+    res.status(400);
+    res.send("<center>404 ERROR -- Pagina No Encontrada</center>");
 })
 
 
