@@ -30,6 +30,16 @@ const agregarRutinas = async(datos) => {
     }
 }
 
+
+
+//modificar rutina
+
+
+//delete rutina
+
+
+
+
 export { 
     agregarRutinas,
     verRutinas

@@ -30,6 +30,14 @@ router.post("/agregarRutina", async (req, res) => {
 
 });
 
+
+//modificar rutina
+
+
+//delete rutina
+
+
+
 //creamos nuestra ruta generica, simeprea al final
 router.get('*', (req, res) => {
     res.status(400);
