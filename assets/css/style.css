@@ -19,6 +19,19 @@ body {
     text-align: center;
 }
 
-.rutina {
+.rutinas {
     display: flex;
+    gap: 15px;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: rgb(233, 166, 59);
+    box-shadow: 0 2px 4px rba(0, 0, 0, 0.1);
+    width: 300px;
+    color: black;
 }

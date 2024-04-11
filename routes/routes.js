@@ -23,10 +23,10 @@ router.get('/rutinas',async (req, res) => {
 //agregar rutina
 router.post("/agregarRutina", async (req, res) => {
   const datos = Object.values(req.body);
-   console.log(datos);
    const result = await agregarRutinas(datos);
+   console.log(result);
 
-   res.json(result);
+   res.redirect('/');
 
 });
 
